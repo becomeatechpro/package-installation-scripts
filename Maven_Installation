@@ -15,6 +15,8 @@ then
         sleep 1
         java -version
         sleep 1
+        javac -version
+        sleep 1
         git --version
         sleep 1
         echo Maven software installation will start in a moment...
