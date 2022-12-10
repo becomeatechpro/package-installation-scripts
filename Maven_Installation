@@ -11,7 +11,8 @@ then
         echo Installing apps to get us running...
         sudo yum install wget vim nano tree unzip git-all -y
         echo Installing java...
-        sudo yum install java-11-openjdk-devel java-1.8.0-openjdk-devel -y
+        # sudo yum install java-11-openjdk-devel -y 
+        sudo yum install java-1.8.0-openjdk-devel -y
         sleep 1
         java -version
         sleep 1
