@@ -1,5 +1,5 @@
 #!/bin/sh
-echo Have you created a RedHat AWS server that has 4gb RAM or more? Enter 1 for yes and 2 for no.
+echo Have you created a RedHat AWS server (t2.micro will work)? Enter 1 for yes and 2 for no.
 read response
 if
         (( $response == 1 ))
@@ -34,8 +34,8 @@ then
         sudo mv apache-maven-3.8.6/ maven
         echo Setting Environmental Variable for $whoami ...
         sleep 1
-        echo "export M2_HOME=/opt/maven" >> ~/.bash_profile
-        echo "export PATH=$PATH:$M2_HOME/bin" >> ~/.bash_profile 
+        #echo "export M2_HOME=/opt/maven" >> ~/.bash_profile 
+        #echo "export PATH=$PATH:$M2_HOME/bin" >> ~/.bash_profile 
         echo Refreshing ".bash_profile" file...
         source ~/.bash_profile
         mvn -v
@@ -43,3 +43,31 @@ then
 else
         echo You will need to set up an AWS server with a minimum of 4GB RAM.
 fi
+
+
+
+<<TheEnclosedLinesAreComments
+
+Manually execute the steps from line 37 
+Step 1:
+=======
+Open the following file using vi, vim, nano, or any text editor: 
+~/.bash_profile
+
+Step 2:
+=======
+Append the following to the file:
+export M2_HOME=/opt/maven
+PATH=$PATH:$M2_HOME/bin
+
+Step 3:
+=======
+Refresh the "~/.bash_profile" file by running:
+source ~/.bash_profile
+
+Step 4:
+=======
+Check the version of Maven by running:
+mvn -v
+
+TheEnclosedLinesAreComments
